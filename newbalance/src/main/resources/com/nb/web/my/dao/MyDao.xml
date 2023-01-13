@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nb.web.my.dao.MyDao">
+  
+  <select id="getMyMainMenuInfo" resultType="com.nb.web.my.dto.MyMainDTO">
+	  SELECT user_name userName, lv, user_mileage mileageAmount, 
+		(SELECT COUNT(*) 
+		  FROM user_coupon 
+		  WHERE user_code = #{userCode} ) couponCnt, 
+		(SELECT COUNT(*) 
+		  FROM wishlist 
+		  WHERE user_code = #{userCode} ) wishCnt, 
+		(SELECT COUNT(*) 
+		  FROM order_list 
+		  WHERE user_code = #{userCode} ) orderCnt
+		FROM user_info
+		WHERE user_code = #{userCode}
+  </select>
+  
+   <select id="getMemberDeliveryInfo" resultType="com.nb.web.my.dto.MyDeliveryInfoDTO">
+	   SELECT ma_seq maSeq, ma_name maName, ma_zipcode maZipcode, ma_address1 maAddress1, ma_address2 maAddress2, ma_phone maPhone, ma_default maDefault
+	   FROM my_address 
+	   WHERE user_code = #{userCode}
+	   ORDER BY ma_default DESC, ma_seq DESC
+   </select>
+  
+  <update id="updateMaDefault">
+	  UPDATE my_address 
+	  SET ma_default = 0
+	  WHERE user_code = #{userCode} AND ma_default = 1
+  </update>
+  
+  <insert id="insertMemberDeliveryInfo">
+	  INSERT INTO my_address
+	  VALUES(TO_NUMBER((select MAX(ma_seq) + 1 FROM  my_address)), #{userCode}, #{maName}, #{maZipcode}, #{maAddress1}, #{maPhone}, #{maDefault}, #{maAddress2})
+  </insert>
+ 	 
+ <select id="checkDuplicateDeliveryInfo" resultType="Integer">
+	 SELECT COUNT(*) cnt
+	 FROM my_address
+	 WHERE user_code= #{userCode} and ma_zipcode=#{maZipcode} and ma_address1 = #{maAddress1} and ma_address2 = #{maAddress2}
+ </select>
+ 
+ <delete id="deleteMemberDeliveryInfo">
+  	 DELETE FROM my_address
+	 WHERE ma_seq = #{maSeq} 
+  </delete>
+  
+  <update id="updateMemberDeliveryInfo" parameterType="com.nb.web.my.dto.MyDeliveryInfoDTO">
+	UPDATE my_address
+	SET ma_name = #{maName}, 
+	ma_zipcode = #{maZipcode}, 
+	ma_address1 = #{maAddress1}, 
+	ma_phone = #{maPhone}, 
+	ma_default = #{maDefault},
+	ma_address2 = #{maAddress2} 
+	WHERE user_code = #{userCode} 
+	AND ma_seq = #{maSeq}
+  </update>
+ 
+</mapper> 

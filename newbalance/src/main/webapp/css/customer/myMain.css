@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+.myPageContainer{
+	min-width: 1200px;
+    padding-top: 54px;
+    padding-bottom: 200px;
+}
+
+.myPageContainer .myPagecontents {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.myPagewrap h2 {
+    margin-top: -7px;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.myUserInfobox {
+    margin-top: 41px;
+    height: 198px;
+    border: 1px solid #dbdbdb;
+    overflow: hidden;
+}
+
+.myUserInfobox .grade {
+    float: left;
+    width: 239px;
+    height: 198px;
+    padding-left: 29px;
+}
+
+.bronze{
+	background-color:#a36037;
+}
+
+.silver{
+	background-color:#9c9ea2;
+}
+
+.gold{
+	background-color:#d8b250;
+}
+
+.vip{
+	background-color:#141414;
+}
+
+.myUserInfobox .grade .myUserName {
+    margin-top: 46px;
+    color: #dbdbdb;
+    line-height: 1;
+}
+
+.nameBold{
+font-weight: 700;
+}
+
+.myUserInfobox .grade a.level {
+    display: block;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.myUserInfobox .grade a.logout {
+    display: inline-block;
+    margin-top: 35px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eaeaea;
+    color: #eaeaea;
+    font-size: 12px;
+    line-height: 1;
+}
+
+
+
+.myUserInfobox .info {
+    float: left;
+    width: 959px;
+    height: 126px;
+    padding: 36px 0;
+}
+
+
+
+.myUserInfobox .info li {
+    float: left;
+    width: 239px;
+    height: 126px;
+    text-align: center;
+    border-left: 1px solid #dbdbdb;
+}
+
+.myUserInfobox .info li:first-child {
+    border-left: 0;
+}
+.myUserInfobox .info li strong {
+    display: block;
+    margin: 23px 0 16px;
+    color: #444;
+    line-height: 1;
+}
+
+.myUserInfobox .info li a {
+    display: inline-block;
+    font-size: 50px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.myPagewrap .myMenu{
+	margin-top: 20px;
+    overflow: hidden;
+}
+
+.myMenu .categoryMenu{
+	    float: left;
+    width: 250px;
+    margin-top: 60px;
+    margin-right: 185px;
+}
+
+.myMenu .categoryMenu .cTitle {
+    display: block;
+    margin-bottom: 28px;
+    padding-bottom: 17px;
+    border-bottom: 2px solid #444;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.myMenu ul {
+    min-height: 184px;
+}
+
+.myMenu .categoryMenu li {
+    margin-top: 12px;
+    
+}
+
+.myMenu .categoryMenu li a {
+    line-height: 1;
+      text-decoration: none;
+    color: #141414;
+    font-weight: 400;
+}
+.myMenu .categoryMenu:nth-child(3n) {
+    margin-right: 0;
+}
+
+.categoryMenu:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.myMenu .categoryMenu li a:hover {
+    color:#cf0a2c;
+}
