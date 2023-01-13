@@ -4,6 +4,17 @@
        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
 
+  <definition name="my.*" template="/WEB-INF/views/my/layout.jsp">
+  	<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"></put-attribute>
+  	<put-attribute name="content" value="/WEB-INF/views/my/{1}.jsp"></put-attribute>
+  	<put-attribute name="myLeftMenu" value="/WEB-INF/views/my/myLeftMenu.jsp"></put-attribute>
+  	<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"></put-attribute>
+  	<put-attribute name="title" value="뉴발란스 공식 온라인스토어"></put-attribute>
+  	
+  	<put-attribute name="css" value="/newbalance/css/my/{1}.css"></put-attribute>
+  </definition>
+
+
   <definition name="*.*" template="/WEB-INF/views/common/layout.jsp">
   	<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"></put-attribute>
   	<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
@@ -13,17 +24,4 @@
   	<put-attribute name="css" value="/newbalance/css/{1}/{2}.css"></put-attribute>
   </definition>
 	  
-
- <!--  <definition name="*.*" template="/WEB-INF/views/{1}/inc/layout.jsp">
-  	<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"></put-attribute>
-  	<put-attribute name="visual" value="/WEB-INF/views/{1}/inc/visual.jsp"></put-attribute>
-  	<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute>
-  	<put-attribute name="aside" value="/WEB-INF/views/{1}/inc/aside.jsp"></put-attribute>
-  	<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp"></put-attribute>
-  	
-  	<put-attribute name="css" value="{2}.css"></put-attribute>
-  	<put-attribute name="title" value="뉴발란스 공식 온라인스토어"></put-attribute>
-  </definition> -->
- 
-  
 </tiles-definitions>
