@@ -1,0 +1,126 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');/*20210122 추가*/
+
+/* ProximaNova */
+@font-face {
+	font-family: 'ProximaNova';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../../fonts/ProximaNova-Light.eot');
+	src: url('../../fonts/ProximaNova-Light.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/ProximaNova-Light.woff2') format('woff2'),
+		url('../../fonts/ProximaNova-Light.woff') format('woff'),
+		url('../../fonts/ProximaNova-Light.otf') format('opentype');
+}
+@font-face {
+	font-family: 'ProximaNova';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../../fonts/ProximaNova-Regular.eot');
+	src: url('../../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/ProximaNova-Regular.woff2') format('woff2'),
+		url('../../fonts/ProximaNova-Regular.woff') format('woff'),
+		url('../../fonts/ProximaNova-Regular.otf') format('opentype');
+}
+@font-face {
+	font-family: 'ProximaNova';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../../fonts/ProximaNova-Bold.eot');
+	src: url('../../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/ProximaNova-Bold.woff2') format('woff2'),
+		url('../../fonts/ProximaNova-Bold.woff') format('woff'),
+		url('../../fonts/ProximaNova-Bold.otf') format('opentype');
+}
+/*20210128 추가 :: S*/
+@font-face {
+	font-family: 'ProximaNova';
+	font-style: normal;
+	font-weight: 900;
+	src: url('../../fonts/ProximaNova-Black.eot');
+	src: url('../../fonts/ProximaNova-Black.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/ProximaNova-Black.woff2') format('woff2'),
+		url('../../fonts/ProximaNova-Black.woff') format('woff');		
+  }
+ /*20210128 추가 :: E*/
+/* DidotLTPro */
+@font-face {
+	font-family: 'DidotLTPro';
+	font-style: normal; 
+	font-weight: 700;
+	src: url('../../fonts/DidotLTPro-Bold.eot');
+	src: url('../../fonts/DidotLTPro-Bold.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/DidotLTPro-Bold.woff2') format('woff2'),
+		url('../../fonts/DidotLTPro-Bold.woff') format('woff'),
+		url('../../fonts/DidotLTPro-Bold.otf') format('opentype');
+}
+
+/* Noto Sans KR */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../../fonts/NotoSansKR-Light.eot');
+	src: url('../../fonts/NotoSansKR-Light.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/NotoSansKR-Light.woff2') format('woff2'),
+	   url('../../fonts/NotoSansKR-Light.woff') format('woff'),
+	   url('../../fonts/NotoSansKR-Light.otf') format('opentype');
+}
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../../fonts/NotoSansKR-Regular.eot');
+	src: url('../../fonts/NotoSansKR-Regular.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/NotoSansKR-Regular.woff2') format('woff2'),
+		url('../../fonts/NotoSansKR-Regular.woff') format('woff'),
+		url('../../fonts/NotoSansKR-Regular.otf') format('opentype');
+}
+/*20210119 추가 :: s*/
+@font-face {
+	font-family: "Noto Sans KR";
+	font-weight: 500;
+	font-style: normal;
+	src: url("../../fonts/NotoSans-Medium.eot?") format("eot"),
+	url("../../fonts/NotoSans-Medium.woff2") format("woff2"),
+	url("../../fonts/NotoSans-Medium.woff") format("woff"),
+	url("../../fonts/NotoSans-Medium.otf") format("opentype");
+}
+/*20210119 추가 :: e*/
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../../fonts/NotoSansKR-Bold.eot');
+	src: url('../../fonts/NotoSansKR-Bold.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/NotoSansKR-Bold.woff2') format('woff2'),
+		url('../../fonts/NotoSansKR-Bold.woff') format('woff'),
+		url('../../fonts/NotoSansKR-Bold.otf') format('opentype');
+}
+/*20210222 추가 :: S*/
+
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 900;
+	src: url('../../fonts/NotoSans-Black.eot');
+	src: url('../../fonts/NotoSans-Black.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/NotoSans-Black.woff2') format('woff2'),
+		url('../../fonts/NotoSans-Black.woff') format('woff'),
+		url('../../fonts/NotoSans-Black.otf') format('opentype');
+}
+/*20210222 추가 :: E*/
+
+/* 20221115 추가 :: S */
+/* ITCGaramondStd */
+@font-face {
+	font-family: 'ITCGaramondStd';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../../fonts/ITCGaramondStd-BkCond.eot');
+	src: url('../../fonts/ITCGaramondStd-BkCond.eot?#iefix') format('embedded-opentype'), 
+		url('../../fonts/ITCGaramondStd-BkCond.woff2') format('woff2'),
+		url('../../fonts/ITCGaramondStd-BkCond.woff') format('woff'),
+		url('../../fonts/ITCGaramondStd-BkCond.otf') format('opentype');
+}
+/* 20221115 추가 :: E */

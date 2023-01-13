@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+/* reset */
+html,body,form,div,p,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,fieldset,th,td,button{margin:0;padding:0;border:0;font:inherit;}
+html,body{height:100%;}
+body{-webkit-text-size-adjust:none;font-family:'ProximaNova', 'DidotLTPro','Noto Sans KR', Dotum, "돋움", sans-serif;font-size:14px;font-weight:400;color:#141414;}
+input,textarea,select,button{font:inherit;vertical-align:middle;padding:0;margin:0;}
+input,textarea {font-family:'Noto Sans KR', sans-serif\9;}
+input[type="button"],input[type="text"],input[type="image"],input[type="submit"],input[type="password"],textarea{-webkit-appearance:none;border-radius:0;}
+input[type="checkbox"]{-webkit-appearance:none;-ms-appearance:none;}
+input[type="radio"]{-webkit-appearance:none;-ms-appearance:none;}
+textarea{resize:none;}
+table{width:100%;border-collapse:collapse;border-spacing:0;}
+ul,ol,li {list-style-type:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;-ms-box-sizing:border-box;}
+img,fieldset,iframe{border:none;}
+address,cite,code,dfn,em,var,th,strong{font-style:normal;font-weight:400;}
+a, a:active, a:hover{text-decoration:none;color:#141414;font-weight:400;}
+article,aside,dialog,figure,footer,header,hgroup,nav,section{display:block;}
+caption, legend {height:0;width:0;line-height:0;font-size:0;overflow:hidden;visibility:hidden;display:none;-webkit-padding-start:0;-webkit-padding-end:0;}
+button{background:transparent;cursor:pointer;}
+iframe{border:0;}
+input::-ms-clear{display:none;}
+label img{pointer-events:none;}
+textarea::placeholder, input::placeholder{color:#777;}
+textarea::-webkit-input-placeholder, input::-webkit-input-placeholder {color:#777;}
+textarea::-moz-placeholder, input::-moz-placeholder {color:#777;}
+textarea:-ms-input-placeholder, input:-ms-input-placeholder, .ip_text:-ms-input-placeholder {color:#777;}
+textarea:-moz-placeholder, input:-moz-placeholder {color:#777;}
+
+/* skipnavi */
+#skipnavi {position:absolute; top:0; left:0; z-index:500; width:100%; height:0;}
+#skipnavi a {display:block;position:absolute;top:-1000px;left:0;width:100%;height:1px;overflow:hidden;z-index:99999999;}
+#skipnavi a:focus, #skipnavi a:hover, #skipnavi a:active {top:0px;left:0;background-color:#e9e9e9;padding:7px 0 5px;height:auto;color:#000;font-weight:bold;text-align:center;text-decoration:none;}

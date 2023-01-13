@@ -1,0 +1,280 @@
+@charset "UTF-8";
+
+body{
+  margin: 0;
+}
+.footer{
+  min-width:1200px;
+  background-color: #232323;
+  color:#fff;
+}
+
+.footer .foot_link{
+  height:130px;
+  border-bottom: 1px solid #393939;
+}
+
+.footer .foot_link ul{
+  width:1200px;
+  margin:0 auto;
+  list-style-type: none;
+  
+}
+
+.footer .foot_link  li{
+  float:left;
+  width:300px;
+  padding-top:50px;
+}
+
+.footer .foot_link li a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.footer .foot_link li a strong {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer .foot_link li a:hover strong{
+  color: #cf0a2c;
+}
+
+.footer .foot_link li a span {
+  display: block;
+ 
+  margin-bottom: 5px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.footer:after {
+  display: block;
+  clear: both;
+  content: "";
+}
+
+
+.footer .foot_inner {
+  width: 1200px;
+  height: 330px;
+  margin: 0 auto;
+  padding-top: 70px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.footer .foot_menu{
+  float:left;
+  overflow:hidden;
+}
+
+.footer .foot_info{
+  float:right;
+  overflow:hidden;
+  width:600px;
+}
+.footer .foot_inner .foot_menu .list{
+  float:left;
+  margin-right: 80px;
+}
+
+.footer .foot_inner .foot_menu ul{
+  list-style-type: none;
+  padding:0;
+}
+
+.footer .foot_inner .foot_menu .list strong {
+  display: block;
+  padding-bottom: 18px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.footer .foot_inner .foot_menu .list a{
+  color: #bdbdbd;
+  text-decoration: none;
+ 
+}
+.footer .foot_inner .foot_menu .list li{
+
+  margin:10px 0;
+}
+
+.footer .foot_inner .foot_menu .list li:hover a{
+  color: #cf0a2c;
+}
+
+
+
+.footer .foot_inner .foot_info .sns {
+    height: 22px;
+    margin-bottom: 17px;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/icon_foot_sns.png) no-repeat 0 0;
+}
+
+.footer .foot_inner .foot_info .sns a:nth-child(1) {
+  width: 21px;
+  margin-right: 30px;
+}
+
+.footer .foot_inner .foot_info .sns a:nth-child(2) {
+  width: 21px;
+  margin-right: 28px;
+}
+
+.footer .foot_inner .foot_info .sns a:nth-child(3) {
+  width: 21px;
+  margin-right: 28px;
+}
+
+.footer .foot_inner .foot_info .sns a:nth-child(4) {
+  width: 20px;
+  margin-right: 30px;
+}
+
+.footer .foot_inner .foot_info .sns a:nth-child(5) {
+  width: 74px;
+  margin-right: 20px;
+  padding-left: 32px;
+  color: #aeaeae;
+  font-size: 11px;
+  line-height: 19px;
+}
+.footer .foot_inner .foot_info .sns a:nth-child(6) {
+  width: 42px;
+  padding-left: 32px;
+  color: #aeaeae;
+  font-size: 11px;
+  line-height: 19px;
+}
+
+.foot_info a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 400;
+}
+
+.foot_info .sns .blind {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.copyright .c_link, .copyright{
+  color:#acacac;
+}
+.copyright .btn_line{
+  border-bottom : 1px solid #fff;
+}
+
+  .copyright .c_link:hover, .copyright .btn_line:hover{
+    color:#cf0a2c;
+  }
+  
+  .copyright p a:nth-of-type(1){
+    color: #fff;
+  }
+
+.copyright .isms{
+  display:flex;
+}
+
+.isms_content{
+  margin-left: 20px;
+  padding-top:10px;
+}
+
+.copy{
+  color:#545454;
+}
+
+.footer .foot_info .sns a{
+  padding:10px;
+}
+
+.dimm_pop {
+  z-index: 99 !important;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.7;
+  display:none;
+}
+
+.policyPopUp{
+  position: absolute;
+  left: 0px;
+  width: auto;
+  z-index: 100;
+display:none;
+}
+.policyPopUp .policyPopUpInner{
+  background-color: white;
+  position: absolute;
+  width: 700px;
+  padding: 50px 40px;
+  border: 1px solid black;
+  margin: auto;
+  z-index: 100;
+}
+
+.policyPopUpInner .policyPopUpHeader strong {
+  display: block;
+  color: #121212;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.policyPopUpInner .policyPopUpHeader{
+  padding-bottom: 18px;
+  border-bottom: 2px solid #121212;
+}
+
+.policyPopUpCntType .policyPopUpText{
+  list-style-type: none;
+  padding:0;
+  font-size: 14px;
+  color:#121212
+}
+
+.policyPopUpCntType .policyPopUpText2{
+  color:#777;
+  font-size: 14px;
+}
+
+.point_b{
+  font-weight: 700;
+}
+
+.policyPopUpCntType .policyPopUpText {
+  padding-top: 190px;
+  background: url(https://image.nbkorea.com/NBRB_PC/common/bg_content.png) no-repeat center 50px/89px;
+  padding-bottom: 28px;
+  font-family: 'Noto Sans KR',sans-serif;
+}
+
+.policyPopUp .policyPopUpClose {
+  position: absolute;
+  right: 50px;
+  top: 50px;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+}
