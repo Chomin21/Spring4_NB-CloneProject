@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+   <modelVersion>4.0.0</modelVersion>
+	<groupId>org.doit</groupId>
+	<artifactId>web</artifactId>
+	<name>STSMVC03</name>
+	<packaging>war</packaging>
+	<version>1.0.0-BUILD-SNAPSHOT</version>
+   <properties>
+      <!-- Java -->
+      <java-version>1.8</java-version>
+      <javax.inject>1</javax.inject>
+      <junit-version>4.12</junit-version>
+
+      <!-- Spring -->
+      <org.springframework-version>4.3.14.RELEASE</org.springframework-version>
+      <org.aspectj-version>1.9.7</org.aspectj-version>
+
+      <!-- Web -->
+      <jsp.version>2.3.0</jsp.version>
+      <jstl.version>1.2.1</jstl.version>
+      <servlet.version>3.1.0</servlet.version>
+
+      <!-- Logging -->
+      <log4j-version>1.2.17</log4j-version>
+      <org.slf4j-version>1.7.25</org.slf4j-version>
+
+      <!-- Maven -->
+      <maven-eclipse-plugin-version>2.10</maven-eclipse-plugin-version>
+      <maven-compiler-plugin-version>3.7.0</maven-compiler-plugin-version>
+      <exec-maven-plugin-version>1.6.0</exec-maven-plugin-version>
+   </properties>
+
+   <dependencies>
+      <!-- Spring -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-context</artifactId>
+         <version>${org.springframework-version}</version>
+         <exclusions>
+            <!-- Exclude Commons Logging in favor of SLF4j -->
+            <exclusion>
+               <groupId>commons-logging</groupId>
+               <artifactId>commons-logging</artifactId>
+            </exclusion>
+         </exclusions>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-webmvc</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
+
+      <!-- AspectJ -->
+      <dependency>
+         <groupId>org.aspectj</groupId>
+         <artifactId>aspectjweaver</artifactId>
+         <version>${org.aspectj-version}</version>
+      </dependency>
+
+      <dependency>
+         <groupId>org.aspectj</groupId>
+         <artifactId>aspectjrt</artifactId>
+         <version>${org.aspectj-version}</version>
+      </dependency>
+
+      <!-- Logging -->
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-api</artifactId>
+         <version>${org.slf4j-version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>jcl-over-slf4j</artifactId>
+         <version>${org.slf4j-version}</version>
+         <scope>runtime</scope>
+      </dependency>
+      <dependency>
+         <groupId>org.slf4j</groupId>
+         <artifactId>slf4j-log4j12</artifactId>
+         <version>${org.slf4j-version}</version>
+         <scope>runtime</scope>
+      </dependency>
+      <dependency>
+         <groupId>log4j</groupId>
+         <artifactId>log4j</artifactId>
+         <version>${log4j-version}</version>
+         <exclusions>
+            <exclusion>
+               <groupId>javax.mail</groupId>
+               <artifactId>mail</artifactId>
+            </exclusion>
+            <exclusion>
+               <groupId>javax.jms</groupId>
+               <artifactId>jms</artifactId>
+            </exclusion>
+            <exclusion>
+               <groupId>com.sun.jdmk</groupId>
+               <artifactId>jmxtools</artifactId>
+            </exclusion>
+            <exclusion>
+               <groupId>com.sun.jmx</groupId>
+               <artifactId>jmxri</artifactId>
+            </exclusion>
+         </exclusions>
+         <scope>runtime</scope>
+      </dependency>
+
+      <!-- @Inject -->
+      <dependency>
+         <groupId>javax.inject</groupId>
+         <artifactId>javax.inject</artifactId>
+         <version>${javax.inject}</version>
+      </dependency>
+
+      <!-- Servlet -->
+      <dependency>
+         <groupId>javax.servlet</groupId>
+         <artifactId>javax.servlet-api</artifactId>
+         <version>${servlet.version}</version>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+         <groupId>javax.servlet.jsp</groupId>
+         <artifactId>javax.servlet.jsp-api</artifactId>
+         <version>${jsp.version}</version>
+         <scope>provided</scope>
+      </dependency>
+      <dependency>
+         <groupId>javax.servlet.jsp.jstl</groupId>
+         <artifactId>javax.servlet.jsp.jstl-api</artifactId>
+         <version>${jstl.version}</version>
+      </dependency>
+      <dependency>
+         <groupId>org.glassfish.web</groupId>
+         <artifactId>javax.servlet.jsp.jstl</artifactId>
+         <version>${jstl.version}</version>
+         <exclusions>
+            <!-- jstl-api was adding selvlet-api 2.5 and jsp-api -->
+            <exclusion>
+               <artifactId>jstl-api</artifactId>
+               <groupId>javax.servlet.jsp.jstl</groupId>
+            </exclusion>
+         </exclusions>
+      </dependency>
+
+      <!-- Test -->
+      <dependency>
+         <groupId>junit</groupId>
+         <artifactId>junit</artifactId>
+         <version>${junit-version}</version>
+         <scope>test</scope>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+      <dependency>
+         <groupId>org.projectlombok</groupId>
+         <artifactId>lombok</artifactId>
+         <version>1.18.24</version>
+         <scope>provided</scope>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-aop -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-aop</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
+
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-test -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-test</artifactId>
+         <version>${org.springframework-version}</version>
+         <scope>test</scope>
+      </dependency>
+
+      <!--[4] https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-jdbc</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
+
+      <!-- [3] https://mvnrepository.com/artifact/org.springframework/spring-tx -->
+      <dependency>
+         <groupId>org.springframework</groupId>
+         <artifactId>spring-tx</artifactId>
+         <version>${org.springframework-version}</version>
+      </dependency>
+
+      <!-- □ https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
+      <dependency>
+         <groupId>com.zaxxer</groupId>
+         <artifactId>HikariCP</artifactId>
+         <version>3.4.5</version>
+      </dependency>
+
+      <!-- [1] https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+      <dependency>
+         <groupId>org.mybatis</groupId>
+         <artifactId>mybatis</artifactId>
+         <version>3.4.6</version>
+      </dependency>
+
+      <!-- [2] https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+      <dependency>
+         <groupId>org.mybatis</groupId>
+         <artifactId>mybatis-spring</artifactId>
+         <version>1.3.2</version>
+      </dependency>
+
+      <!-- p102 https://mvnrepository.com/artifact/org.bgee.log4jdbc-log4j2/log4jdbc-log4j2-jdbc4 -->
+      <dependency>
+         <groupId>org.bgee.log4jdbc-log4j2</groupId>
+         <artifactId>log4jdbc-log4j2-jdbc4</artifactId>
+         <version>1.16</version>
+      </dependency>  
+      
+      
+      <!-- 3. fileUpload -->
+      <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+      <dependency>
+         <groupId>commons-fileupload</groupId>
+         <artifactId>commons-fileupload</artifactId>
+         <version>1.2</version>
+      </dependency>
+      
+      <!-- 4. spring io -->
+      <dependency>
+         <groupId>commons-io</groupId>
+         <artifactId>commons-io</artifactId>
+         <version>1.2</version>
+      </dependency>
+      
+      <!-- 5. cglib -->
+      <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+      <dependency>
+         <groupId>cglib</groupId>
+         <artifactId>cglib</artifactId>
+         <version>2.2</version>
+      </dependency>
+      
+      <!-- 6. tomcat-dbcp -->
+      <!-- https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-dbcp -->
+      <dependency>
+         <groupId>org.apache.tomcat</groupId>
+         <artifactId>tomcat-dbcp</artifactId>
+         <version>8.5.83</version>
+      </dependency>
+      
+      <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.14.0</version>
+      </dependency>
+      
+      <!-- 1. tiles http://tiles.apache.org -->
+      <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
+      <dependency>
+         <groupId>org.apache.tiles</groupId>
+         <artifactId>tiles-jsp</artifactId>
+         <version>2.2.2</version>
+      </dependency>
+      
+      <!-- 8. p 655 spring-security-web, config, taglibs 3개 추가 -->
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
+      <dependency>
+          <groupId>org.springframework.security</groupId>
+          <artifactId>spring-security-web</artifactId>
+          <version>3.2.4.RELEASE</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
+      <dependency>
+         <groupId>org.springframework.security</groupId>
+         <artifactId>spring-security-config</artifactId>
+         <version>3.2.4.RELEASE</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
+      <dependency>
+         <groupId>org.springframework.security</groupId>
+         <artifactId>spring-security-taglibs</artifactId>
+         <version>3.2.4.RELEASE</version>
+      </dependency>
+
+   </dependencies>
+   <build>
+      <plugins>
+         <plugin>
+            <artifactId>maven-eclipse-plugin</artifactId>
+            <version>${maven-eclipse-plugin-version}</version>
+            <configuration>
+               <additionalProjectnatures>
+                  <projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+               </additionalProjectnatures>
+               <additionalBuildcommands>
+                  <buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+               </additionalBuildcommands>
+               <downloadSources>true</downloadSources>
+               <downloadJavadocs>true</downloadJavadocs>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${maven-compiler-plugin-version}</version>
+            <configuration>
+               <source>${java-version}</source>
+               <target>${java-version}</target>
+               <compilerArgument>-Xlint:all</compilerArgument>
+               <showWarnings>true</showWarnings>
+               <showDeprecation>true</showDeprecation>
+            </configuration>
+         </plugin>
+         <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>${exec-maven-plugin-version}</version>
+            <configuration>
+               <mainClass>org.test.int1.Main</mainClass>
+            </configuration>
+         </plugin>
+      </plugins>
+   </build>
+</project>
