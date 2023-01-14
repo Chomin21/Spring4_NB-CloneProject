@@ -1,5 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/security/tags"%>
 <% String contextPath = request.getContextPath(); %>
 <script
 zsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -1208,15 +1209,13 @@ zsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script
 					</div>
 				</div>
 				<div class="mymenu">
-					<c:choose>
-						<c:when test="${not empty member}">
-							<a href="/newbalance/my/main.action" data-gtag-idx="fo_common_4_2">마이페이지</a>
-						</c:when>
-						<c:otherwise>
-							<a href="/newbalance/customer/login.action" data-gtag-idx="fo_common_4_4">로그인</a>
-							<a href="/newbalance/customer/joinn.action" data-gtag-idx="fo_common_4_5">회원가입</a>
-						</c:otherwise>
-					</c:choose>
+					<s:authorize access="isAuthenticated()">
+						<a href="/newbalance/my/main.action" data-gtag-idx="fo_common_4_2">마이페이지</a>
+					</s:authorize>
+					 <s:authorize access="!isAuthenticated()">
+						<a href="/newbalance/customer/login.action" data-gtag-idx="fo_common_4_4">로그인</a>
+						<a href="/newbalance/customer/joinn.action" data-gtag-idx="fo_common_4_5">회원가입</a>
+					</s:authorize>
 							
 							
 							

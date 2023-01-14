@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/security/tags"%>
 <%@ page import="java.text.*" %>
 <div class="myPageContainer">
 		<div class="myPagecontents">
@@ -12,7 +13,9 @@
 					<div class="grade ${myData.lv}"> <!-- [D] 등급별로 class명 추가! (vip / gold / silver / bronze)  -->
 					<p class="myUserName"><strong class="nameBold">${myData.userName}</strong>님</p>
 					<a href="/newbalance/my/mbLevel.action" class="level">${fn:toUpperCase(myData.lv)}</a>
-					<a href="/newbalance/customer/logout.action" class="logout">로그아웃</a>
+					<s:authorize access="isAuthenticated()">
+						<a href="/newbalance/j_spring_security_logout" class="logout">로그아웃</a>
+					</s:authorize>
 				</div>
 				<ul class="info">
 					<li><strong>쿠폰</strong><a href="/newbalance/my/coupon.action" data-gtag-idx="fo_mypage_1">${myData.couponCnt}</a></li>

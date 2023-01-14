@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.naming.NamingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.ctc.wstx.shaded.msv_core.driver.textui.Debug;
+import com.nb.web.auth.dto.UserInfo;
 import com.nb.web.my.dto.MyDeliveryInfoDTO;
 import com.nb.web.my.dto.MyMainDTO;
 import com.nb.web.my.service.MyPageService;
@@ -27,21 +28,22 @@ public class MyController {
 	public MyController() {}
 	
 	@GetMapping("main.action")
-	public String myMain(Model model) throws NamingException {
+	public String myMain(Model model, Authentication authentication) throws NamingException {
+		UserInfo userInfo = (UserInfo) authentication.getPrincipal();
+		String userCode = userInfo.getUsercode();
 		
-		//todo : 나중에 member의 usercode 받아오기. 파라미터 Principal principal 사용.
-		
-		MyMainDTO myData = myPageService.getMyMainMenuInfo("M1");
+		MyMainDTO myData = myPageService.getMyMainMenuInfo(userCode);
 		model.addAttribute("myData", myData);
 		
 		return "customer.myMain";
 	}
 	
 	@GetMapping("memberDeliveryInfo.action")
-	public String memberDeliveryInfo(Model model) throws NamingException {
+	public String memberDeliveryInfo(Model model, Authentication authentication) throws NamingException {
 		
-		//todo : 나중에 member의 usercode 받아오기. 파라미터 Principal principal 사용.
-		Map<String, Object> delData = myPageService.getMemberDeliveryInfo("M1");
+		UserInfo userInfo = (UserInfo) authentication.getPrincipal();
+		String userCode = userInfo.getUsercode();
+		Map<String, Object> delData = myPageService.getMemberDeliveryInfo(userCode);
 			
 		model.addAttribute("delData", delData);
 		
@@ -54,11 +56,13 @@ public class MyController {
 	}
 	
 	@PostMapping("memberDeliveryInsertProc.action")
-	public String memberDeliveryInsertProc(MyDeliveryInfoDTO myDeliveryInfoDTO, Model model) throws NamingException {
+	public String memberDeliveryInsertProc(MyDeliveryInfoDTO myDeliveryInfoDTO, Authentication authentication,  Model model) throws NamingException {
 		int rowCount = 0;
+		UserInfo userInfo = (UserInfo) authentication.getPrincipal();
+		String userCode = userInfo.getUsercode();
 
 		try {			
-			myDeliveryInfoDTO.setUserCode("M1");
+			myDeliveryInfoDTO.setUserCode(userCode);
 			myDeliveryInfoDTO.setMaName(myDeliveryInfoDTO.getMaName().trim());
 			myDeliveryInfoDTO.setMaZipcode(myDeliveryInfoDTO.getMaZipcode().trim());
 			myDeliveryInfoDTO.setMaAddress1(myDeliveryInfoDTO.getMaAddress1().trim());
@@ -118,10 +122,12 @@ public class MyController {
 	
 	
 	@PostMapping("memberDeliveryUpdateProc.action")
-	public String memberDeliveryUpdateProc(MyDeliveryInfoDTO myDeliveryInfoDTO, Model model) throws NamingException {
+	public String memberDeliveryUpdateProc(MyDeliveryInfoDTO myDeliveryInfoDTO, Authentication authentication, Model model) throws NamingException {
 		int rowCount = 0;
+		UserInfo userInfo = (UserInfo) authentication.getPrincipal();
+		String userCode = userInfo.getUsercode();
 		try {
-			myDeliveryInfoDTO.setUserCode("M1");
+			myDeliveryInfoDTO.setUserCode(userCode);
 			rowCount = myPageService.updateMemberDeliveryInfo(myDeliveryInfoDTO);
 		} catch (NamingException e) {
 			e.printStackTrace();

@@ -14,6 +14,14 @@
   	<put-attribute name="css" value="/newbalance/css/my/{1}.css"></put-attribute>
   </definition>
 
+  <definition name="main.*" template="/WEB-INF/views/common/layout.jsp">
+  	<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"></put-attribute>
+  	<put-attribute name="content" value="/WEB-INF/views/{1}.jsp"></put-attribute>
+  	<put-attribute name="footer" value="/WEB-INF/views/common/footer.jsp"></put-attribute>
+  	<put-attribute name="title" value="뉴발란스 공식 온라인스토어"></put-attribute>
+  	
+  	<put-attribute name="css" value="/newbalance/css/main/main.css"></put-attribute>
+  </definition>
 
   <definition name="*.*" template="/WEB-INF/views/common/layout.jsp">
   	<put-attribute name="header" value="/WEB-INF/views/common/header.jsp"></put-attribute>

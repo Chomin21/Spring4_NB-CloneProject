@@ -258,6 +258,19 @@
           <version>2.14.0</version>
       </dependency>
       
+      <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
+      <dependency>
+		   <groupId>com.fasterxml.jackson.dataformat</groupId>
+		   <artifactId>jackson-dataformat-xml</artifactId>
+		   <version>2.14.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+		   <groupId>com.google.code.gson</groupId>
+		   <artifactId>gson</artifactId>
+		   <version>2.8.9</version>
+		</dependency>
+      
       <!-- 1. tiles http://tiles.apache.org -->
       <!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
       <dependency>
@@ -286,6 +299,13 @@
          <artifactId>spring-security-taglibs</artifactId>
          <version>3.2.4.RELEASE</version>
       </dependency>
+      
+      <dependency>
+	    <groupId>net.sf.json-lib</groupId>
+	    <artifactId>json-lib</artifactId>
+	    <version>2.4</version>
+	    <classifier>jdk15</classifier>
+	  </dependency>
 
    </dependencies>
    <build>

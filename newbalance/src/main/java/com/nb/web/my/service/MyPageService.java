@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.nb.web.my.dao.MyDao;
+import com.nb.web.my.dao.MyDAO;
 import com.nb.web.my.dto.MyDeliveryInfoDTO;
 import com.nb.web.my.dto.MyMainDTO;
 
@@ -21,7 +21,7 @@ import com.nb.web.my.dto.MyMainDTO;
 public class MyPageService {
 
 	@Autowired
-	public MyDao myDao = null;
+	public MyDAO myDao = null;
 	
 	public MyPageService() {}
 
