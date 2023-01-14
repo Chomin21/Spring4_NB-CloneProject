@@ -1,0 +1,5 @@
+package com.nb.web.customer.service;
+
+public class FindIdFailException extends RuntimeException {
+
+}

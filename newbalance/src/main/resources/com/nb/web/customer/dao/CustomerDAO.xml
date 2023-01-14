@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nb.web.customer.dao.CustomerDAO">
+  
+  <select id="selectIdByHp" resultType="String">
+	  SELECT user_id  
+	    FROM user_info 
+	   WHERE user_phone = #{cellNo}
+	     AND user_name = #{custName}
+  </select>
+  
+  <update id="updatePwdById">
+	   UPDATE user_info 
+	   SET user_pwd = #{pwd}
+	   WHERE user_id = #{custId}
+  </update>
+  
+  <update id="updateLastLoginDate">
+	   UPDATE user_info 
+	   SET user_lastlogin = SYSDATE
+	   WHERE user_code = #{userCode}
+  </update>
+ 
+  <select id="getCartCount" resultType="Integer">
+	  SELECT count(*) cart_count
+	  FROM cart
+	  WHERE user_code = #{userCode}
+  </select>
+</mapper> 

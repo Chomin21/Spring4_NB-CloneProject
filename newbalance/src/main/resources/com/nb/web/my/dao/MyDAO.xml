@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.nb.web.my.dao.MyDao">
+<mapper namespace="com.nb.web.my.dao.MyDAO">
   
   <select id="getMyMainMenuInfo" resultType="com.nb.web.my.dto.MyMainDTO">
 	  SELECT user_name userName, lv, user_mileage mileageAmount, 

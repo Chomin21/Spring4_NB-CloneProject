@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nb.web.auth.dao.AuthDAO">
+  
+  <select id="findUserInfo" resultType="com.nb.web.auth.dto.UserInfo">
+	  SELECT a.user_id as userid,
+	  		 user_pwd as password,
+	  		 user_state as enabled,
+	  		 auth as authority,
+			 a.user_code as usercode,
+			 user_name as username
+	 	FROM user_info a
+	 	JOIN auth_info b
+	 	  ON a.user_code = b.user_code
+ 	   WHERE a.user_id = #{userId}
+  </select>
+ 
+</mapper> 

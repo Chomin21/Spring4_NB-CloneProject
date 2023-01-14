@@ -8,7 +8,7 @@ import org.apache.ibatis.annotations.Param;
 import com.nb.web.my.dto.MyDeliveryInfoDTO;
 import com.nb.web.my.dto.MyMainDTO;
 
-public interface MyDao {
+public interface MyDAO {
 
 	public MyMainDTO getMyMainMenuInfo(String userCode) throws SQLException;
 	public List<MyDeliveryInfoDTO> getMemberDeliveryInfo(String userCode) throws SQLException;
