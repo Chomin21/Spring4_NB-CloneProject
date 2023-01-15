@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nb.web.product.dao.ProductDAO">
+
+   <insert id="addWishlist" parameterType="com.nb.web.product.dto.WishlistDTO">
+ 	INSERT INTO wishlist 
+ 	(
+ 	 wish_code, 
+ 	 pd_code, 
+ 	 user_code, 
+ 	 wish_insertdate,
+ 	 wish_expiredate
+ 	 ) 
+ 	 SELECT wish_code.nextval AS wish_code,
+ 	  	    A.*
+ 	   FROM (
+ 	<foreach collection="dto.pdCode" item="type" separator="UNION ALL ">
+    SELECT #{type} AS pd_code, 
+    	   #{dto.userCode} AS user_code, 
+		   SYSDATE AS wish_insertdate, 
+		   ADD_MONTHS(SYSDATE, 1) AS wish_expiredate 
+	  FROM dual
+	</foreach>
+	) A
+   </insert>
+   
+   <select id="wishDuplicateCheck" parameterType="com.nb.web.product.dto.WishlistDTO" resultType="Integer">
+   SELECT count(*) count 
+     FROM wishlist 
+    WHERE user_code = #{dto.userCode}  
+      and pd_code  in
+   <foreach collection="dto.pdCode" item="type" open="(" close=")" separator="," >
+   	#{type}
+   </foreach>
+   </select>
+</mapper> 
