@@ -1,5 +1,6 @@
 package com.nb.web.my.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.naming.NamingException;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.nb.web.auth.dto.UserInfo;
 import com.nb.web.my.dto.MyDeliveryInfoDTO;
 import com.nb.web.my.dto.MyMainDTO;
+import com.nb.web.my.dto.MyWishDTO;
 import com.nb.web.my.service.MyPageService;
 
 @Controller
@@ -139,8 +141,23 @@ public class MyController {
 		} else {
 			model.addAttribute("result", "fail"); 
 		}
-		
 		return "my.confirmMemberDeliveryInfo";
 	}
+
+	
+	@GetMapping("wishList.action")
+	public String wishList(Authentication authentication, Model model) throws NamingException {
+		
+		UserInfo userInfo = (UserInfo) authentication.getPrincipal();
+		String userCode = userInfo.getUsercode();
+		
+		
+		List<MyWishDTO> mywishdto = myPageService.getMemberWishList(userCode);
+		
+		model.addAttribute("wishData", mywishdto);
+		
+		return "my.wishList";
+	}
+	
 	
 }
