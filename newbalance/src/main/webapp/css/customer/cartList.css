@@ -1,0 +1,1085 @@
+@charset "UTF-8";
+
+.cartContainer{
+	padding-top: 0px;
+	min-width: 1200px;
+    padding-top: 106px;
+    padding-bottom: 200px;
+}
+	
+.cartContainer .cartContents {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.basketWrap{
+	width: 980px;
+    margin: 0 auto;
+}
+
+.titleArea{
+	position: relative;
+    margin: 56px 0 50px
+}
+
+.pgTitle{
+	font-size: 33px;
+    color: #121212;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.ttStep{
+	position: absolute;
+    right: 0;
+    top: 15px;
+}
+
+.ttStep .currStatus{
+ border-bottom: 3px solid #141414;
+    color: #141414;
+}
+
+.ttStep span {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 7px;
+    margin-right: 35px;
+    color: #aeaeae;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.ttStep span.currStatus:after {
+    background-position: 0 0;
+}
+
+.ttStep span:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: -24px;
+    width: 8px;
+    height: 8px;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_bullet_step.png) no-repeat 0 bottom;
+}
+
+.ttStep span:last-child {
+    margin-right: 0;
+}
+
+.tblCount{
+	position: relative;
+}
+
+.tblCount .totalCount {
+    margin-bottom: 18px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.tblCount .totalCount strong {
+    color: #cf0a2c;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.topTbl {
+    border-top: 2px solid #444;
+}
+
+.topTbl colgroup {
+    display: table-column-group;
+}
+
+.topTbl col {
+    display: table-column;
+}
+
+.topTbl thead {
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.topTbl tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+.tbl_basket .chkBox {
+    text-align: right;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.tbl_basket td.chkBox {
+    vertical-align: top;
+}
+
+.topTbl thead th {
+    height: 61px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.topTbl tbody td {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+input.ipChekbox {
+    display: none;
+}
+
+input.ipChekbox:checked + label {
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_chk_on.png) no-repeat 0 0;
+    padding-left: 18px;
+    display: inline-block;
+    height: 18px;
+    padding: 0 0 0 27px;
+    line-height: 18px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+input.ipChekbox + label {
+    display: inline-block;
+    height: 18px;
+    padding: 0 0 0 27px;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_chk.png) no-repeat 0 0;
+    line-height: 18px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+span.bblind {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.topTbl tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.topTbl tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+/* .tbl_basket .chkBox {
+	vertical-align: top;
+    text-align: right;
+    border-bottom: 1px solid #dbdbdb;
+        padding: 38px 0;
+} */
+
+.tbl_y tbody td {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 38px 0;
+    text-align: center;
+}
+
+.tbl_basket td {
+    padding: 38px 0;
+    text-align: center;
+}
+
+.tbl_basket td .img {
+    position: relative;
+    float: left;
+    width: 84px;
+    margin-left: 20px;
+}
+
+.tbl_basket td .img img {
+    display: block;
+    width: 84px;
+}
+
+.tbl_basket td .pr {
+    padding-left: 134px;
+    text-align: left;
+}
+
+.tbl_basket td .pr a.p_name:hover {
+    text-decoration: underline;
+    color: #141414;
+    font-weight: 400;
+}
+
+.tbl_basket td .pr .p_name {
+    display: block;
+    margin-bottom: 10px;
+    line-height: 20px;
+    word-break: break-all;
+}
+
+.tbl_basket td .pr .p_opt {
+    margin-top: 2px;
+    color: #666;
+    line-height: 20px;
+}
+
+.tbl_basket td .pr .p_opt + .btn_line {
+    margin-top: 8px;
+}
+
+.btnLine {
+    display: inline-block;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #777;
+    color: #000;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.tbl_basket td .selectBox + .btnLine {
+    margin-left: 6px;
+}
+
+.selectWrap {
+	position: relative;
+    text-align: center;
+}
+
+.tbl_basket td .selectBox {
+	display: inline-block;
+    vertical-align: middle;  
+}
+
+.selectBox {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.selectBox.ssmall:before {
+	height: 33px !important;
+}
+
+.selectBox:before {
+	content: '';
+    display: none;
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    width: 30px;
+    height: 43px;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_select_box.png) no-repeat 100% 50%;
+    overflow: hidden;
+}
+
+.selectBox.ssmall select {
+    height: 35px !important;
+    padding: 0 30px 0 22px;
+}
+
+.selectBox select {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 0 30px 0 15px;
+    border: 1px solid #dbdbdb;
+    border-radius: 1px;
+    background: #fff url(https://image.nbkorea.com/NBRB_PC/common/bg_select_box.png) no-repeat 100% 50%;
+    color: #121212;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+.tbl_basket td.price strong {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.tbl_basket td [class*="btnTy"]:first-child {
+    margin-top: 0;
+}
+
+.tbl_basket td [class*="btnTy"] {
+    margin: 6px 0 0;
+}
+
+[class*="btnTy"].xs {
+    min-width: 80px;
+    padding: 11px 15px 10px;
+    border-width: 1px !important;
+    font-size: 12px;
+}
+
+[class*="btnTy"] {
+    display: inline-block;
+    margin-left: 7px;
+    border: none;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    cursor: pointer;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+
+.btnTyRface, .btnTyRface:hover {
+    border: 2px solid #cf0a2c;
+    background: #cf0a2c;
+    color: #fff;
+}
+
+.btnTyGface, .btnTyGface:hover {
+    border: 2px solid #444;
+    background: #444;
+    color: #fff;
+}
+
+.btnTyBline, .btnTyBline:hover {
+    border: 2px solid #444;
+    color: #141414;
+}
+
+.btnTyBline.xs {
+    border-color: #000;
+}
+
+.btmTbl{
+	margin-top: 20px;
+    overflow: hidden;
+}
+
+.btmTbl .tbl_control {
+    display: inline-block;
+}
+
+.btmTbl .tbl_control > span {
+    display: inline-block;
+    width: 100px;
+    margin-right: 7px;
+    padding-top: 7px;
+    vertical-align: middle;
+}
+
+.btmTbl .tbl_control [class*="btnTy"] {
+    margin-left: 2px;
+}
+
+.btmTbl .info_txt {
+    display: inline-block;
+    margin-top: 8px;
+    float:right;
+    color: #777;
+    font-size: 12px;
+    letter-spacing: -0.025em;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ".";
+    clear: both;
+    height: 0;
+}
+
+
+.sec_price {
+	margin-top: 30px;
+    border: 1px solid #dbdbdb;
+    background: #f4f4f4;
+    overflow: hidden;
+}
+
+
+.sec_price .calc {
+    float: left;
+    width: 718px;
+    padding: 13px 40px 22px;
+    background: #fff;
+    letter-spacing: -0.04em;
+    box-sizing: border-box;
+}
+
+
+.sec_price .calc > div:first-child {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.sec_price .calc > div {
+    padding: 29px 0;
+}
+
+.sec_price .calc > div .ttl {
+    display: inline-block;
+    font-weight: 700;
+}
+
+.sec_price .calc > div .price {
+    display: inline-block;
+    float: right;
+}
+
+.sec_price .total {
+    float: right;
+    width: 260px;
+    padding: 45px 0 0 40px;
+    box-sizing: border-box;
+}
+
+.sec_price .total .txt1 {
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.sec_price .total .txt2 {
+    display: block;
+    margin-top: 10px;
+    color: #777;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.sec_price .total .txt3 {
+    display: block;
+    margin-top: 29px;
+    color: #cf0a2c;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.sec_price .total .txt3 em {
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.basket_wrap .btn_area {
+    margin-top: 30px;
+    text-align: right;
+    display: block;
+}
+
+.lg {
+    min-width: 140px;
+    padding: 20px 18px;
+    font-size: 16px;
+}
+
+.btnArea{
+    margin-top: 30px;
+    text-align: right;
+    display: block;
+}
+
+.basket_wrap + .goods {
+    margin-top: 102px;
+}
+
+.title_goods {
+    margin-bottom: 34px;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: -0.07em;
+}
+
+.goods_list01 li:nth-child(4n-3) {
+    margin-left: 0;
+}
+.goods_list01{
+	list-style-type: none;
+	padding:0;
+}
+
+.goods_list01 li {
+    float: left;
+    margin-left: 80px;
+}
+
+.goods_list01 .pro_area {
+    display: block;
+    width: 200px;
+    padding: 20px;
+    position: relative;
+    box-sizing: initial;
+}
+
+.goods_list01:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.goods_list01 .img_goods {
+    display: block;
+    width: 200px;
+    height: 200px;
+}
+
+.goods_list01 .trade_name {
+    height: 42px;
+    margin: 20px 0 3px;
+    line-height: 20px;
+}
+
+.goods_list01 .price {
+    margin-bottom: 18px;
+}
+
+.goods_list01 .price del {
+    margin-left: 1px;
+    color: #777;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+}
+
+.goods_list01 .price del span {
+    font-size: 14px;
+}
+
+.goods_list01 .price del {
+    display: inline-block;
+    margin-left: 1px;
+    color: #777;
+    letter-spacing: -0.02em;
+}
+
+.goods_list01 .price p {
+    display: inline-block;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.goods_list01 .price p span {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.cscenter {
+    margin-top: 148px;
+    border-top: 2px solid #000;
+}
+
+.cscenter ul li {
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 170px;
+}
+
+.cscenter ul li.faq:before {
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_cscenter.png) no-repeat 0 0;
+}
+
+.cscenter ul li:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50px;
+    top: 60px;
+    width: 52px;
+    height: 50px;
+}
+
+.cscenter ul li a {
+    display: block;
+    height: 50px;
+    padding: 58px 0 62px 137px;
+}
+
+.cscenter ul li a strong {
+    display: block;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.cscenter ul li a span {
+    display: block;
+    margin-top: 8px;
+    color: #777;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.cscenter ul li:after {
+    content: '';
+    display: block;
+    position: absolute;
+    right: 43px;
+    top: 80px;
+    width: 8px;
+    height: 13px;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/icon_arrow_gray2.png) no-repeat 0 0;
+}
+
+.cscenter .cs_number {
+    position: relative;
+    height: 204px;
+    background: #f4f4f4;
+}
+
+.cscenter .cs_number:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 51px;
+    width: 1px;
+    height: 90px;
+    background: #dbdbdb;
+}
+
+
+.cscenter .cs_number .box {
+    float: left;
+    width: 550px;
+    padding: 51px 0 0 50px;
+    box-sizing:initial;
+}
+
+.cscenter .cs_number .box div.as {
+    width: 290px;
+}
+
+.cscenter .cs_number .box .number {
+    float: left;
+}
+
+.cscenter .cs_number .box .number dt {
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.cscenter .cs_number .box .number dl dd {
+    margin-top: 7px;
+    font-size: 18px;
+    line-height: 1;
+}
+
+.cscenter .cs_number .box .time {
+    float: left;
+    letter-spacing: -0.04em;
+}
+
+.cscenter .cs_number .box .time p {
+    margin-bottom: 11px;
+    color: #777;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.cscenter .cs_number .box .time dl {
+    margin-top: 8px;
+    overflow: hidden;
+}
+
+.cscenter .cs_number .box .time dl dt {
+    float: left;
+    letter-spacing: -0.04em;
+    line-height: 1;
+}
+
+.cscenter .cs_number .box .time dl dd {
+    padding-left: 68px;
+    line-height: 1;
+}
+
+.cscenter .cs_number .box .time span {
+    display: block;
+    margin-top: 12px;
+    color: #999;
+    line-height: 1;
+    letter-spacing: -0.04em;
+}
+
+.cscenter .cs_number .box {
+    float: left;
+    width: 550px;
+    padding: 51px 0 0 50px;
+}
+
+.cscenter .cs_number .box + .box .number {
+    width: 240px;
+}
+
+.cscenter .cs_number .box .number {
+    float: left;
+}
+
+.goods{
+	margin-top: 102px;
+}
+
+.cscenter ul li.inq:before {
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_cscenter.png) no-repeat 0 100%;
+}
+
+.layer_pop {
+    width: 100%;
+    z-index: 100;
+    word-break: break-all;
+}
+
+.w450 .pop_inner {
+    width: 450px;
+    padding: 40px 30px;
+}
+
+.layer_pop .pop_inner {
+    position: relative;
+    margin: 0 auto;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.layer_pop.w700 .pop_inner {
+    width: 700px;
+    padding: 50px 40px;
+}
+
+.w450 .square {
+    margin: -15px -5px;
+}
+
+.pop_inner .square {
+    border: 2px solid #444;
+    text-align: center;
+}
+.pop_inner .interest {
+    height: 326px;
+    padding-top: 62px;
+    box-sizing: border-box;
+}
+
+.pop_inner .comp_txt1 {
+    display: block;
+    padding-bottom: 17px;
+    color: #121212;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.07em;
+    line-height: 1;
+}
+
+.pop_inner .interest .comp_txt1:before {
+    content: '';
+    display: block;
+    width: 47px;
+    height: 40px;
+    margin: 0 auto 13px;
+    background: url(https://image.nbkorea.com/NBRB_PC/product/icon_heart_pop.png) no-repeat 0 0;
+}
+
+.pop_inner .comp_txt2 {
+    color: #777;
+    line-height: 20px;
+    letter-spacing: -0.04em;
+}
+
+.point_b {
+    color: #141414 !important;
+}
+
+.w450 .square .btn_area {
+    margin-top: 22px;
+}
+
+.pop_inner .btn_area {
+    text-align: center;
+}
+
+[class*="btn_ty_"].sm {
+    min-width: 120px;
+    padding: 14px 16px 13px;
+    font-size: 14px;
+}
+
+[class*="btn_ty_"]:first-child {
+    margin-left: 0;
+}
+
+[class*="btn_ty_"] {
+    display: inline-block;
+    margin-left: 7px;
+    border: none;
+    text-align: center;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    cursor: pointer;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.btn_ty_bface {
+    border: 2px solid #141414;
+    background: #141414;
+    color: #fff;
+}
+
+.w450 .square .close {
+    right: 47px;
+    top: 47px;
+}
+
+.pop_inner .close {
+    position: absolute;
+    z-index: 60;
+}
+
+.pop_inner .close img {
+    display: block;
+}
+
+.dimm_pop {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.7;
+    z-index: 99 !important;
+}
+
+.pop_inner .popTitle{
+	padding: 0 0 18px;
+    border-bottom: 2px solid #121212;
+    position: relative !important;
+    height: auto !important;
+}
+
+.pop_inner .popTitle strong{
+	display: block;
+    color: #121212;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.option_change {
+    padding: 37px 0 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.option_change .pr_visual {
+    float: left;
+    margin: 4px 0 0 20px;
+}
+
+.option_change .pr_visual img {
+    display: block;
+    width: 84px;
+    height: 84px;
+}
+
+.option_change .pr_select {
+    padding-left: 160px;
+}
+
+.option_change .pr_select .p_name {
+    line-height: 20px;
+}
+
+.option_change .pr_select .color_chip .tit {
+    margin-top: 14px;
+}
+
+.pr_select .tit {
+    margin: 20px 0 3px;
+    color: #777;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.pr_select .items {
+    width: 448px;
+    margin-left: -8px;
+}
+
+.pr_select .items:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.option_change .pr_select .color_chip .items li {
+    margin: 12px 0 2px 8px;
+}
+
+.items li {
+    float: left;
+    margin: 8px 0 0 8px;
+}
+
+.color_chip input {
+    display: none;
+}
+
+.color_chip input + label {
+    display: block;
+    position: relative;
+    width: 14px;
+    height: 14px;
+    padding-left: 0;
+    background: none;
+}
+
+.color_chip input + label > img {
+    display: block;
+    width: 14px;
+    height: 14px;
+}
+
+.pr_select .tit {
+    margin: 20px 0 3px;
+    color: #777;
+    font-size: 13px;
+    line-height: 1;
+}
+
+.option_change .pr_select .items {
+    width: 100%;
+    overflow: hidden;
+}
+
+.pr_select .items {
+    width: 448px;
+    margin-left: -8px;
+}
+
+.size .items input[type="radio"] {
+    display: none;
+}
+
+.size .items input[type="radio"] + label {
+    display: inline-block;
+    width: 56px;
+    height: 35px;
+    border: 1px solid #dbdbdb;
+    font-size: 14px;
+    text-align: center;
+    line-height: 33px;
+    vertical-align: top;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.btn_area.wid140 [class*="btn_ty"] {
+    min-width: 140px;
+}
+
+.btn_ty_bline, .btn_ty_bline:hover {
+    border: 2px solid #444;
+    color: #141414;
+}
+
+.w700 .close {
+    right: 40px;
+    top: 50px;
+}
+
+.color_chip input:checked + label:before {
+    display: block;
+}
+
+.color_chip input + label:before {
+    content: '';
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/img_filter_chk.png) no-repeat 0 0;
+    background-size: 14px 14px;
+}
+
+.size .items input[type="radio"]:disabled + label, .size .items input[type="radio"].radio:disabled + label {
+    border-color: #eee;
+    background-color: #eee;
+    color: #aeaeae;
+    font-weight: 400;
+}
+
+.size .items input[type="radio"]:checked + label {
+    border-color: #141414;
+    background-color: #141414;
+    color: #fff;
+    font-weight: 400;
+}
+
+.size .items input[type="radio"] + label {
+    display: inline-block;
+    width: 56px;
+    height: 35px;
+    border: 1px solid #dbdbdb;
+    font-size: 14px;
+    text-align: center;
+    line-height: 33px;
+    vertical-align: top;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+input.ipChekbox:disabled + label {
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_chk_off.png) no-repeat 0 0;
+}
+
+.tbl_basket td .img .soldOut {
+    font-size: 20px;
+}
+
+.soldOut {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+    color: #fff;
+    display: table;
+    z-index: 3;
+}
+
+.tbl_basket td .img .soldOut em {
+    display: table-cell;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+.tbl_basket .pd_soldout td .pr .p_name, .tbl_basket .pd_soldout td .pr .p_opt {
+    color: #aeaeae;
+}
+
+.selectBox select[disabled] {
+    background: #f4f4f4 url(https://image.nbkorea.com/NBRB_PC/common/bg_select_box_dis.png) no-repeat 100% 50%;
+}
+
+.pd_soldout .btnLine {
+    color: #aeaeae;
+    border-color: #aeaeae;
+}
+
+.pd_soldout .pr .btnLine {
+    color: #000;
+    border-color: #777;
+}
+
+.tbl_basket .pd_soldout td.price {
+    color: #aeaeae;
+}

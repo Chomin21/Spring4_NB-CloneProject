@@ -1,12 +1,15 @@
 package com.nb.web.customer.service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import javax.naming.NamingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.nb.web.customer.dao.CustomerDAO;
+import com.nb.web.customer.dto.CartOptionDTO;
+import com.nb.web.customer.dto.CartProductDTO;
 
 public class CartService {
 	
@@ -27,26 +30,32 @@ public class CartService {
 		
 	}
 	
-	/*
+	
 	public List<CartProductDTO> getCartList(String userCode) throws NamingException {
-		
 		List<CartProductDTO> cartList = null;
-		try ( Connection conn = ConnectionProvider.getConnection()) {
-			MemberDAO memberDao = MemberDAO.getInstance();
-			cartList = memberDao.getCartList(conn, userCode);
-			
-
+		try{
+			cartList = this.customerDao.getCartList(userCode);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return cartList;
 	}
 	
+	public int deleteCartProduct(String userCode, String[] delList) throws NamingException{
+		int rowCount = 0;
+		try {
+			rowCount = customerDao.deleteCartProduct(userCode, delList);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} 
+		return rowCount;
+	}
+
+	
 	public int updateCartQty(String userCode, int cartNum, int cartCount) throws NamingException {
 		int rowCount = 0;
-		try ( Connection conn = ConnectionProvider.getConnection()) {
-			MemberDAO memberDao = MemberDAO.getInstance();
-			rowCount = memberDao.updateCartQty(conn, cartNum, cartCount, userCode);
+		try {
+			rowCount = this.customerDao.updateCartQty(cartNum, cartCount, userCode);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -54,28 +63,17 @@ public class CartService {
 		return rowCount;
 	}
 	
-	
-	public int deleteCartProduct(String userCode, String[] delCartList) throws NamingException{
-		int rowCount = 0;
-		try ( Connection conn = ConnectionProvider.getConnection()) {
-			MemberDAO memberDao = MemberDAO.getInstance();
-			rowCount = memberDao.deleteCartProduct(conn, userCode, delCartList);
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return rowCount;
-	}
 
-	public int updateCartOption(String userCode, int cartNum, String pdCode, int sizeCode, String colorCode) throws NamingException {
+
+	public int updateCartOption(CartProductDTO dto) throws NamingException {
 		int rowCount = 0;
-		try ( Connection conn = ConnectionProvider.getConnection()) {
-			MemberDAO memberDao = MemberDAO.getInstance();
-			
-			if(memberDao.isDuplicateOption(conn, userCode, pdCode, sizeCode)) {
+		
+		System.out.println("tttt: " + dto.toString());
+		try {
+			if(this.customerDao.isDuplicateOption(dto) >= 1) {
 				rowCount = 2;
 			}else {
-				rowCount = memberDao.updateCartOption(conn, cartNum, pdCode, sizeCode, colorCode);					
+				rowCount = this.customerDao.updateCartOption(dto);					
 			}
 
 		} catch (SQLException e) {
@@ -86,14 +84,21 @@ public class CartService {
 
 	public List<CartOptionDTO> getCartOption(String pdCode) throws NamingException {
 		List<CartOptionDTO> result = null;
-		try ( Connection conn = ConnectionProvider.getConnection()) {
-			MemberDAO memberDao = MemberDAO.getInstance();
-			result = memberDao.getCartOption(conn, pdCode);
-
+		try {
+			result = this.customerDao.getCartOptionPdcode(pdCode);
+			System.out.println(result.toString());
+			
+			for (int i = 0; i < result.size(); i++) {
+				List<CartProductDTO> options = this.customerDao.getSizeOption(result.get(i).getPdCode());
+				result.get(i).setOptions(options);
+			}
+			
 		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return result;
 	}
-	*/
+
 }

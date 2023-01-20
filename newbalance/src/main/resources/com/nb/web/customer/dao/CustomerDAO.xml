@@ -28,4 +28,61 @@
 	  FROM cart
 	  WHERE user_code = #{userCode}
   </select>
+  
+  <select id="getCartList" resultType="com.nb.web.customer.dto.CartProductDTO">
+  	SELECT cart_num cartNum, user_code userCode, pd_code pdCode, size_code sizeCode,
+			color, cart_count cartCount, pd_image pdImage, pd_name pdName, pd_price pdPrice, sz "size",
+			CASE WHEN NVL(pd_mincount,10) >= stock_count 
+			THEN stock_count 
+			ELSE NVL(pd_mincount,10) 
+			END as maxCount  
+	FROM ( SELECT cart_num, user_code, c.pd_code, ps.size_code, color, 
+				cart_count, c.pd_image, c.pd_name, c.pd_price, 
+				(SELECT sz FROM size_list WHERE size_code = c.size_code) as sz,
+				 p.pd_mincount, ps.stock_count 
+			FROM  cart c JOIN product p ON p.pd_code = c.pd_code 
+					JOIN product_stock ps ON ps.pd_code = c.pd_code 
+			WHERE c.pd_code||c.size_code = ps.pd_code||ps.size_code AND c.user_code = #{userCode})
+  </select>
+  
+  <delete id="deleteCartProduct">
+   DELETE FROM cart 
+   WHERE user_code = #{userCode}  
+   and cart_num  in
+   <foreach collection="delList" item="item" open="(" close=")" separator=",">
+        #{item}
+    </foreach>
+  </delete>
+  
+  <update id="updateCartQty">
+  	UPDATE cart
+	SET cart_count = #{cartCount}
+	WHERE cart_num = #{cartNum} and user_code = #{userCode}
+  </update>
+  
+  <select id="getCartOptionPdcode" resultType="com.nb.web.customer.dto.CartOptionDTO">
+  	SELECT DISTINCT pd_code pdCode, c.color color, c.color_url colorUrl
+	FROM product_stock ps JOIN color c ON SUBSTR(ps.pd_code, 9, 2) = c.color_code
+	WHERE pd_code LIKE substr(#{pdCode},1,8) || '%'  
+  </select>
+  
+  <select id="getSizeOption" resultType="com.nb.web.customer.dto.CartProductDTO">
+  	SELECT pd_code pdCode, ps.size_code sizeCode, sz "size", stock_count maxCount
+	FROM product_stock ps JOIN size_list sl ON ps.size_code = sl.size_code 
+	WHERE pd_code = #{pdCode}
+	ORDER BY pd_code, ps.size_code   
+  </select>
+  
+  <select id="isDuplicateOption" parameterType="com.nb.web.customer.dto.CartProductDTO" resultType="Integer">
+  	SELECT count(*) count 
+	FROM cart 
+	WHERE user_code = #{userCode} and pd_code = #{pdCode} and size_code = #{sizeCode}
+  </select>
+  
+  <update id="updateCartOption" parameterType="com.nb.web.customer.dto.CartProductDTO">
+  	UPDATE cart
+	SET size_code = #{sizeCode}, color = #{color}, pd_code = #{pdCode} 
+	WHERE cart_num = #{cartNum} and user_code = #{userCode}
+  </update>
+  
 </mapper> 
