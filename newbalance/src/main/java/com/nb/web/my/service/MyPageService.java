@@ -62,7 +62,7 @@ public class MyPageService {
 				rowCount = -1;
 			}else {
 				if(dto.getMaDefault() == 1) {
-					this.myDao.updateMaDefault("M1");
+					this.myDao.updateMaDefault(dto.getUserCode());
 				}
 				rowCount = this.myDao.insertMemberDeliveryInfo(dto);
 			}
@@ -121,51 +121,5 @@ public class MyPageService {
 		}
 		return rowCount;
 	}
-	/*
 
-	
-	public int addWishlist(WishlistDTO dto){
-	      Connection conn = null;
-	      int rowCount = 0;
-	      try {
-	         conn = ConnectionProvider.getConnection();
-	         ProductDAO dao = ProductDAO.getInstance();
-
-	         conn.setAutoCommit(false); 
-	         rowCount = dao.addWishlist(conn, dto);
-
-	         conn.commit();
-	      } catch (NamingException | SQLException e) {
-	         JdbcUtil.rollback(conn);
-	         throw new RuntimeException(e);
-	      } finally {
-	         JdbcUtil.close(conn); 
-	      }
-	      return rowCount;
-	   }
-
-	public int getWishCount(String userCode) {
-		Connection con =null;
-		
-		try {
-			con  = ConnectionProvider.getConnection();
-			MyDAO dao = MyDAO.getInstance();
-			
-			int totalCount = dao.getTotalWish(con);
-			
-			return totalCount;
-			
-		} catch (NamingException | SQLException e) { 
-			throw new RuntimeException(e);
-		} finally {
-			JdbcUtil.close(con);
-		}
-	}
-
-	
-	
-
-	
-	
-	 */
 }

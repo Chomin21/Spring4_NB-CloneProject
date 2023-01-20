@@ -59,5 +59,22 @@
 	WHERE user_code = #{userCode} 
 	AND ma_seq = #{maSeq}
   </update>
+  
+  <select id="getMemberWishList" resultType="com.nb.web.my.dto.MyWishDTO">
+   SELECT pd_code pdCode, img_url imgUrl, user_code userCode, pd_price pdPrice, pd_name pdName, wish_code wishCode
+   FROM (SELECT ROW_NUMBER() OVER(PARTITION BY pi.pd_code ORDER BY img_seq) row_num, pi.pd_code pd_code , img_url, user_code, pd_price, pd_name, wish_code
+		   FROM wishlist w JOIN product p ON w.pd_code = p.pd_code 
+		       JOIN product_image pi ON p.pd_code = pi.pd_code 
+		   ORDER BY pi.pd_code, img_seq) 
+   WHERE row_num = 1 and user_code = #{userCode}
+   </select>
  
+   <delete id="deleteWishList">
+ 	DELETE FROM wishlist
+ 	WHERE user_code = #{userCode} 
+ 	AND wish_code IN
+ 	<foreach collection="wishList" item="type" open="(" close=")" separator=",">
+		#{type}
+	</foreach>
+   </delete>
 </mapper> 

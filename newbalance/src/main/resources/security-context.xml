@@ -31,10 +31,9 @@
        
        
        
-       <logout logout-url=" /j_spring_security_logout"  invalidate-session="true" logout-success-url="/my/main.action" />
+       <logout logout-url=" /j_spring_security_logout"  invalidate-session="true" logout-success-url="/index.action" />
          
-       <intercept-url pattern="/my/*" access="isAuthenticated()"/>
-       
+       <intercept-url pattern="/my/*" access="isAuthenticated()"/> 
        <intercept-url pattern="/admin/**" access="hasAuthority('ROLE_ADMIN')"/>
        <intercept-url pattern="/**" access="permitAll"/>
     </http>

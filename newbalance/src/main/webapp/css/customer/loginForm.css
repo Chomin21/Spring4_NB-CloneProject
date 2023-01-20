@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+@import '/newbalance/common/common.css'; 
+
+.lfcontainer{
+	padding-bottom: 200px;
+}
+.lfcontainer .contents {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.loginH2Title {
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'DidotLTPro';
+    font-weight: 700;
+    font-size: 48px;
+    color: #121212;
+    line-height: 1;
+}
+
+.loginForm {
+    width: 338px;
+    margin: 60px auto 0 auto;
+    
+}
+
+.loginFormInput{
+	box-sizing: border-box;
+	width:100%; 
+	height:45px;
+	margin-bottom:10px;
+	padding:5px 0px 5px 10px;
+	border: 1px solid #dbdbdb;
+}
+.loginFormInput:focus{
+	outline:none;
+}
+.loginForm .loginFormEtcBox ul{
+	list-style-type: none;
+	padding:0;
+}
+.loginForm .loginFormEtcBox ul li a {
+    color: #777;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.loginFormEtcBox{
+	display:flex;
+	justify-content: space-between;
+	margin-top:10px;
+}
+
+.btnGrp{
+	text-align:center;
+	line-height: 60px;
+	width:100%;
+	margin-top:40px;
+}
+
+.btnGrpCenter{
+	text-align:center;
+}
+
+.btnGrp a{
+	display:block;
+	margin:auto;
+	height:60px;
+	text-decoration: none;
+	margin-bottom:20px;
+	font-weight:500;
+}
+
+.loginBtn, .loginBtn:hover{
+	border: 2px solid #141414;
+    background: #141414;
+    color: #fff;
+    font-size: 16px;
+    margin-top:20px;
+    font-weight:500;
+}
+
+
+.kkoBtn::before {
+    content: '';
+    display: inline-block;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/icon_kakao.jpg) no-repeat center;
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+    background-size: contain;
+    vertical-align: middle;
+}
+.kkoBtn,.kkoBtn:hover{
+	    background: #fee500;
+	    font-size:14px;
+	    color:#141414;
+	    font-weight:600;
+	    font-family: 'Noto Sans KR',sans-serif;
+}
+
+.nvrBtn,.nvrBtn:hover{
+	    background: #1ec800;
+	      font-size:14px;
+	      color:white;
+	      font-weight:400;
+	      font-family: 'Noto Sans KR',sans-serif;
+}
+
+.appleBtn, .appleBtn:hover{
+	font-size: 16px;	
+    border: 1px solid #141414;
+    color:#141414;
+    font-family: 'Noto Sans KR',sans-serif;
+    font-weight:500;
+}
+.appleBtn::before {
+    content: '';
+    display: inline-block;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/icon_apple.png) no-repeat center;
+    vertical-align: middle;
+    background-size: contain;
+    width: 17px;
+    height: 21px;
+    margin-right: 10px;
+    margin-top: -5px;
+}
+.nonMembers_txt{
+	 text-align: center;
+	 
+}
+.nonMembers_txt a{
+   
+    margin-top: 30px;
+    font-size:12px;
+    color:#777;
+}
+
+.login_benefit {
+	
+    width: 560px;
+    margin: 40px auto 0 auto;
+    padding: 40px 0 50px;
+    border-top: 3px solid #141414;
+    border-bottom: 1px solid #919191;
+    text-align: center;
+}
+
+.login_benefit .txt1 {
+    color: #444;
+    font-size: 24px;
+    padding: 36px 0 7px;
+    font-weight: 700;
+    line-height: 46px;
+    letter-spacing: -0.02em;
+}
+
+.login_benefit .txt2 {
+    padding-bottom: 47px;
+    letter-spacing: -0.02em;
+}
+
+.btnTyRface{
+	display: inline-block;
+	width: 120px;
+	box-sizing:border-box;
+    font-size: 14px;
+    border: 1px solid #cf0a2c;
+    background: #cf0a2c;
+    color: #fff;
+    min-width: 120px;
+    padding: 14px 16px 13px;
+}
+
+.btnTyRface:hover{
+    color: #fff;
+}
+
+.login_benefit .txt2{
+	font-size:14px;
+}
+
+input.ip_chekbox:checked + label {
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_chk_on.png) no-repeat 0 0;
+}
+
+input.ip_chekbox + label {
+    display: inline-block;
+    height: 18px;
+    padding: 0 0 0 27px;
+    background: url(https://image.nbkorea.com/NBRB_PC/common/bg_chk.png) no-repeat 0 0;
+    line-height: 18px;
+    vertical-align: top;
+    cursor: pointer;
+}
+

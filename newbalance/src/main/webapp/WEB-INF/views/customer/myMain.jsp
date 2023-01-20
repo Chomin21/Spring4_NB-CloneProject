@@ -59,7 +59,7 @@
 				<div class="categoryMenu">
 					<strong class="cTitle">상품내역</strong>
 					<ul>
-						<li><a href="/newbalance/my/orderWishList.action" data-gtag-idx="fo_mypage_18">관심상품</a></li>
+						<li><a href="/newbalance/my/wishList.action" data-gtag-idx="fo_mypage_18">관심상품</a></li>
                            <li><a href="/newbalance/my/orderWishToday.action" data-gtag-idx="fo_mypage_19">오늘 본 상품</a></li>
 						<li><a href="/newbalance/my/warehousingAlarmProduct.action" data-gtag-idx="fo_mypage_20">재입고 알림 상품</a></li>
 					</ul>

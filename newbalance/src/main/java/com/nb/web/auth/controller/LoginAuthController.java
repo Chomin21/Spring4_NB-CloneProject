@@ -35,8 +35,6 @@ public class LoginAuthController implements AuthenticationSuccessHandler{
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response,
 			Authentication authentication) throws IOException, ServletException {
-		
-		System.out.println("타냐???????????");
 
 		UserInfo userInfo = (UserInfo) authentication.getPrincipal();
 		String userCode = userInfo.getUsercode();
@@ -46,7 +44,6 @@ public class LoginAuthController implements AuthenticationSuccessHandler{
 		request.getSession().setAttribute("cartCount", cartCount);
 
 		resultRedirectStrategy(request, response, authentication);
-		//response.sendRedirect(request.getContextPath() + "/index.action");
 	}
 	
 	 protected void resultRedirectStrategy(HttpServletRequest request, HttpServletResponse response,
@@ -58,7 +55,7 @@ public class LoginAuthController implements AuthenticationSuccessHandler{
 	            String targetUrl = savedRequest.getRedirectUrl();
 	            redirectStratgy.sendRedirect(request, response, targetUrl);
 	        } else {
-	            redirectStratgy.sendRedirect(request, response, request.getContextPath() + "/index.action");
+	            redirectStratgy.sendRedirect(request, response,"/index.action");
 	        }
 	        
 	    }

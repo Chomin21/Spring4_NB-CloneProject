@@ -2,8 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="s" uri="http://www.springframework.org/security/tags"%>
 <% String contextPath = request.getContextPath(); %>
-<script
-zsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 <script type="text/javascript">
 	var pre_idx = null;
@@ -290,7 +289,7 @@ zsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script
 	<div class="top_menu">
 		<div class="inner">
 			<a href="/collection/madeusauk.action" class="made" data-gtag-idx="fo_common_1_1"><img src="https://image.nbkorea.com/NBRB_PC/common/btn_made_99x16.png" alt="MADE IN USA /UK"></a>
-			<a href="/my/introMyNB.action" class="mynb" data-gtag-idx="fo_common_1_2"><img src="https://image.nbkorea.com/NBRB_PC/common/logo_mynb.png" alt="MYNB"></a>
+			<a href="/newbalance/index.action" class="mynb" data-gtag-idx="fo_common_1_2"><img src="https://image.nbkorea.com/NBRB_PC/common/logo_mynb.png" alt="MYNB"></a>
 			<ul class="clearfix">				
 						<li><a href="/newbalance/support/storeSearch.action" data-gtag-idx="fo_common_1_3">매장찾기</a></li>
 						<li><a href="/newbalance/support/notice.action" data-gtag-idx="fo_common_1_4">공지사항</a></li>
@@ -304,7 +303,7 @@ zsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script
 	<!-- gnb -->
 	<div class="gnb">
 		<div class="inner">
-			<h1 class="logo"><a href="/" data-gtag-idx="fo_common_2">New Balance</a></h1>
+			<h1 class="logo"><a href="/newbalance/index.action" data-gtag-idx="fo_common_2">New Balance</a></h1>
 
 			<!-- global_menu -->
 			
@@ -1214,7 +1213,7 @@ zsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script
 					</s:authorize>
 					 <s:authorize access="!isAuthenticated()">
 						<a href="/newbalance/customer/login.action" data-gtag-idx="fo_common_4_4">로그인</a>
-						<a href="/newbalance/customer/joinn.action" data-gtag-idx="fo_common_4_5">회원가입</a>
+						<a href="/newbalance/customer/join.action" data-gtag-idx="fo_common_4_5">회원가입</a>
 					</s:authorize>
 							
 							
@@ -1224,7 +1223,7 @@ zsrc="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script
 					
 				</div>
 				<div class="cart none_count">
-					<a href="/newbalance/my/cartList.action" data-gtag-idx="fo_common_4_3">
+					<a href="/newbalance/customer/cartList.action" data-gtag-idx="fo_common_4_3">
 						<span class="blind"></span>
 						<c:if test="${cartCount != 0 && not empty cartCount}">
 							<span class="count">${cartCount}</span>					

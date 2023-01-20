@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.nb.web.auth.dao.AuthDAO;
 import com.nb.web.auth.dto.UserInfo;
 
-@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 	
 	@Autowired
