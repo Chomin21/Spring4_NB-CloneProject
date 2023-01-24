@@ -1,15 +1,12 @@
-<br>
-<br>
-<br>
-
 # 프로젝트 개요
+
 <table>
   <tr align="center">
   <td>
 주제   
   </td>
   <td>
-기존 구현한 뉴발란스 웹페이지 클론코딩 JSP/Servlet -> Spring/Mybatis 변환
+<a href="https://github.com/group1-newbalance/NB-CloneProject">기존 구현한 뉴발란스 웹페이지 클론코딩 JSP/Servlet</a> -> Spring/Mybatis 변환
   </td>
   </tr>
    <tr align="center">
@@ -45,8 +42,6 @@
 <br>
 <br>
 <br>
-<br>
-
 
 # 구현 기능
 
@@ -92,7 +87,7 @@ Spring Security 커스터마이징
   </td>
 
   <td>
-  배송지 조회/추가/수정/삭제, 중복된 주소지 등록 불가, Daum 우편번호 API 사용
+  배송지 조회, 배송지 추가, 배송지 수정, 배송지 삭제, 중복된 주소지 등록 불가, Daum 우편번호 API 사용
   </td>
   </tr>
   <tr align="center">
@@ -106,11 +101,9 @@ Spring Security 커스터마이징
   </tr>
 </table>
 
-
 <br>
 <br>
 <br>
-
 
 # ERD
 
